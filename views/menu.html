@@ -1,0 +1,16 @@
+{% import "macros.html" as macros %}
+
+<div class="card border-success mb-3 h-100 mt-2">
+  <div class="card-body row mx-auto p-1" style="overflow:hidden;">
+    <a class="ripple" href="/ship/{{ship.id_ship}}"><img src="{{ ship.image }}"
+        class=" p-1 img-thumbnail rounded" /></a>
+    <div class="row mx-auto m-1">{{ macros.btn(ship.name, "/ship/"~ ship.id_ship ~"" , true)}}
+      <div class="col-auto my-2 mx-auto">{{ macros.btn('Картинка', "/ship/"~ ship.id_ship ~"?view=image", false,
+        "btn-link")
+        }}</div>
+      <div class="col-auto my-2 mx-auto">{{ macros.btn('Описание', "/ship/"~ ship.id_ship ~"?view=text", false,
+        "btn-link")
+        }}</div>
+    </div>
+  </div>
+</div>

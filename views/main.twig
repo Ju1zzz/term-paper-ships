@@ -1,0 +1,25 @@
+{% extends "__layout.twig" %}
+
+{% block content %}
+	<div class="container">
+		<div class="row px-0">
+			{% for ship in ships %}
+
+				{% if loop.length == 1 %}
+					<div class="col-10 col-xs-12 col-sm-8">
+						{% include "menu.html" %}
+					</div>
+				{% elseif loop.length == 2 %}
+					<div class="col-10 col-xs-12 col-sm-6">
+						{% include "menu.html" %}
+					</div>
+				{% else %}
+					<div class="col-10 col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-1">
+						{% include "menu.html" %}
+					</div>
+				{% endif %}
+
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

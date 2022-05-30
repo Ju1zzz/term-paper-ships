@@ -1,0 +1,24 @@
+{% extends  "__layout.twig" %}
+{% import "macros.html" as macros %}
+{% block content %}
+	<br>
+	<div class="card border-success mb-3">
+		<div class="card-header bg-success text-white">
+			<h1 class="m-2">Типы</h1>
+		</div>
+		<div class="card-body text-success">
+			<div class="row">
+				{% for type in types %}
+					<div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-2">
+						<div class="card border-success mb-3 h-100">
+							<div class="card-header">{{type.title|title}}</div>
+							<div class="card-body row mx-auto p-1" style="overflow:hidden;">
+								<a class="ripple" href="/?type={{type.title}}"><img src="{{ type.image_type }}" class=" p-1 img-fluid rounded-circle shadow"/></a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

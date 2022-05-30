@@ -1,0 +1,45 @@
+{% extends "__layout.twig" %}
+
+{% block content %}
+	
+	<div class="card border-primary mb-3">
+		<div class="card-header bg-primary text-white">
+			<h1 class="m-2">Поиск</h1>
+		</div>
+		<div class="card-body text-primary">
+			<form class="row g-3">
+
+				<div class="col-md-4">
+					<label for="inputState" class="form-label">Тип</label>
+					<select name="type" class="form-select">
+						<option value="все">все</option>
+						{% for type in types %}
+							<option value="{{type.name}}">{{type.name}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class="col-md-6">
+					<label class="form-label">Название</label>
+					<input type="text" name="title" class="form-control">
+				</div>
+
+				<div class="col-12">
+					<label for="inputAddress" class="form-label">Описание</label>
+					<input type="text" name="text" class="form-control" id="inputAddress" placeholder="...">
+				</div>
+
+				<div class="col-12">
+					<button type="submit" class="btn btn-primary">Найти</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="mt-3 row d-flex">
+		{% for ship in ships %}
+			<div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-1">
+				{% include "menu.html" %}
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% macro btn(textB, url, bool, typeB, type) %} 
+    
+    {% if bool == true %}
+          <a  href={{url}} class="btn btn-success" >{{textB}}</a>  
+    {% endif %}
+    {% if bool == false %}
+           <a href= {{url}} class="{{typeB}} {% if type == 'text' %} active {% endif %}">{{textB}}</a> 
+    {% endif %}
+  
+{% endmacro %}
