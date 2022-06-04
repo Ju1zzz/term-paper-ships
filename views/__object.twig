@@ -3,8 +3,7 @@
 {% block content %}
 	
 	{% import "macros.html" as macros %}
-	<link href="style.css" rel="stylesheet" type="text/css">
-	<link href="calendar.css" rel="stylesheet" type="text/css">
+	
 	<br>
 
 	<br>
@@ -42,7 +41,8 @@
 					</div>
 				</nav>
 				<div class="content home">
-					<?=$calendar?>
+					{{calendar|raw}}
+					
 				</div>
 
 			</div>

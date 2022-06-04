@@ -62,7 +62,7 @@ class ObjectController extends BaseShipTwigController {
                 $calendar->add_event('Арендован',  $context['events'][$i][1], 1);
               }
             
-              print_r($calendar);
+            $context['calendar'] =  $calendar;
             
             
             
