@@ -1,32 +1,55 @@
 {% extends  "__layout.twig" %}
 
 {% block content %}
+	
 	{% import "macros.html" as macros %}
-	
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<link href="calendar.css" rel="stylesheet" type="text/css">
 	<br>
+
+	<br>
+	<h1>
+		<a href="/ship/{{id_ship}}">{{name}}</a>
+	</h1>
+
+	<ul class="nav nav-pills">
+		<li class="nav-item">
+			{{ macros.btn( "Картинка" , '/ship/'~ id_ship ~'?view=image', false, 'nav-link ', type == 'image'  ) }}
+		</li>
+		<li class="nav-item ">
+			{{ macros.btn( "Описание" , '/ship/'~ id_ship ~'?view=text', false, 'nav-link ', type == 'text') }}
+		</li>
+
+	</ul>
 	<div class="container">
-		<br>
-		<h1>{{title}}</h1>
+		<div class="block">
+			<ul class="list-group">
+				<li class="list-group-item">
 
-		<ul class="nav nav-pills">
-			<li class="nav-item">
-				{{ macros.btn( "Картинка" , '/ship/'~ id_ship ~'?view=image', false, 'nav-link ', type == 'image'  ) }}
-			</li>
-			<li class="nav-item ">
-				{{ macros.btn( "Описание" , '/ship/'~ id_ship ~'?view=text', false, 'nav-link ', type == 'text') }}
-			</li>
-			
-		</ul>
-		<ul class="list-group">
-			<li class="list-group-item">
+					{% block objectContent %}
+						<div class="container">
+							<p>{{description}}</p>
 
-				{% block shipContent %}
-					<div class="container">
-						<p>{{description}}</p>
+						</div>
+					{% endblock %}
+				</li>
+			</ul>
+			<div class="container">
+
+				<nav class="navtop">
+					<div>
+						<h1>Event Calendar</h1>
 					</div>
-				{% endblock %}
-			</li>
-		</ul>
+				</nav>
+				<div class="content home">
+					<?=$calendar?>
+				</div>
+
+			</div>
+
+		</div>
+
+
 	</div>
-	
+
 {% endblock %}

@@ -21,7 +21,7 @@ require_once "BaseShipTwigController.php";
             $sql =<<<EOL
             SELECT * 
             from ship
-            WHERE (:name=''OR name like CONCAT('%',:name,'%')) and (type=:type) and (:text=''OR text like CONCAT('%',:text,'%'))
+            WHERE (:name=''OR name like CONCAT('%',:name,'%')) and (fk_id_type=:type) and (:text=''OR text like CONCAT('%',:text,'%'))
         EOL;
         }
         $query = $this->pdo->prepare($sql);

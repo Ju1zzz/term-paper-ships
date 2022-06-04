@@ -1,6 +1,5 @@
 <?php
 require_once "BaseController.php"; 
-
 class TwigBaseController extends BaseController {
     public $title = ""; 
     public $template = ""; 
@@ -19,7 +18,6 @@ class TwigBaseController extends BaseController {
         $context = parent::getContext();
         $context['title'] = $this->title;  
         $context["messages"] = isset($_SESSION['messages']) ? $_SESSION['messages'] : "";
-
         return $context;
     }
 

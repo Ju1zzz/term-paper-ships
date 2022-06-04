@@ -2,11 +2,11 @@
 
 {% block content %}
 	
-	<div class="card border-primary mb-3">
-		<div class="card-header bg-primary text-white">
+	<div class="card border-success mb-3" style="background-color: transparent!important;">
+		<div class="card-header bg-success text-white">
 			<h1 class="m-2">Поиск</h1>
 		</div>
-		<div class="card-body text-primary">
+		<div class="card-body text-success">
 			<form class="row g-3">
 
 				<div class="col-md-4">
@@ -14,7 +14,7 @@
 					<select name="type" class="form-select">
 						<option value="все">все</option>
 						{% for type in types %}
-							<option value="{{type.name}}">{{type.name}}</option>
+							<option value="{{type.id_type}}">{{type.title}}</option>
 						{% endfor %}
 					</select>
 				</div>
@@ -29,7 +29,7 @@
 				</div>
 
 				<div class="col-12">
-					<button type="submit" class="btn btn-primary">Найти</button>
+					<button type="submit" class="btn btn-success">Найти</button>
 				</div>
 			</form>
 		</div>

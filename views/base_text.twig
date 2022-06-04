@@ -1,7 +1,14 @@
 {% extends "__object.twig" %}
 
 {% block objectContent %}
-  <div class = "container">
-      <br>{{text|raw}}
-</div>
+	<div class="container">
+		<br>{{info|raw}}
+		<p>Техническое описание:</p>
+		<ul>
+			<li>Скорость: {{speed}}</li>
+			<li>Количество кают: {{rooms}}</li>
+			<li>Вместимость: {{capacity}}</li>
+      <li>размер судна: {{size}}</li>
+		</ul>
+	</div>
 {% endblock %}
