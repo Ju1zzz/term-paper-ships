@@ -21,6 +21,14 @@ class ComposerStaticInita457fee5dbe2bb0671f1b0043b98bc78
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
         ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
+        'E' => 
+        array (
+            'EZMAIL\\' => 7,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -36,6 +44,18 @@ class ComposerStaticInita457fee5dbe2bb0671f1b0043b98bc78
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'EZMAIL\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ezmail/ezmail/EZMAIL',
+        ),
+    );
+
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -43,6 +63,7 @@ class ComposerStaticInita457fee5dbe2bb0671f1b0043b98bc78
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInita457fee5dbe2bb0671f1b0043b98bc78::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInita457fee5dbe2bb0671f1b0043b98bc78::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInita457fee5dbe2bb0671f1b0043b98bc78::$classMap;
 
         }, null, ClassLoader::class);
     }

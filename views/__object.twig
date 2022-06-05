@@ -18,7 +18,9 @@
 		<li class="nav-item ">
 			{{ macros.btn( "Описание" , '/ship/'~ id_ship ~'?view=text', false, 'nav-link ', type == 'text') }}
 		</li>
-
+		<li>
+		<a class="btn btn-outline-primary"  href="/ship/{{id_ship}}/send">Отправить письмо</a>
+		</li>
 	</ul>
 	<div class="container">
 		<div class="block">
@@ -35,11 +37,6 @@
 			</ul>
 			<div class="container">
 
-				<nav class="navtop">
-					<div>
-						<h1>Event Calendar</h1>
-					</div>
-				</nav>
 				<div class="content home">
 					{{calendar|raw}}
 					
