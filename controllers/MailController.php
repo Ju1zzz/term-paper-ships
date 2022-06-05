@@ -1,5 +1,5 @@
 <?php 
-error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+error_reporting(E_ALL & ~E_NOTICE);
 require_once "BaseShipTwigController.php"; 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -36,7 +36,7 @@ $mail = new PHPMailer(true);
 
 
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.yandex.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -56,13 +56,10 @@ $mail = new PHPMailer(true);
     $mail->Subject = $subject;
     $mail->Body    = $message;
     //var_dump($mail);
-
+echo "Письмо отправлено. Спасибо, " . $name . ", с вами скоро свяжутся";
     $mail->send();
-    echo "Письмо отправлено. Спасибо, " . $name . ", с вами скоро свяжутся";
+    
 
-          
-            
-           
       
             $this->get($context);
     }
