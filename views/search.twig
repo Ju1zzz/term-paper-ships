@@ -36,10 +36,14 @@
 	</div>
 
 	<div class="mt-3 row d-flex">
-		{% for ship in ships %}
-			<div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-1">
-				{% include "menu.html" %}
-			</div>
-		{% endfor %}
+		{% if ships %}
+			{% for ship in ships %}
+				<div class="col-12 col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-1">
+					{% include "menu.html" %}
+				</div>
+			{% endfor %}
+		{% else %}
+		{{message_search}}
+		{% endif %}
 	</div>
 {% endblock %}

@@ -7,61 +7,6 @@
     "content-hash": "acc37f65d9234d37681d62014ea65dd5",
     "packages": [
         {
-            "name": "ezmail/ezmail",
-            "version": "v1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Nerdtrix/EZMAIL.git",
-                "reference": "ef7a651d529b8c99efb579f9ca108eeb3bc010e5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Nerdtrix/EZMAIL/zipball/ef7a651d529b8c99efb579f9ca108eeb3bc010e5",
-                "reference": "ef7a651d529b8c99efb579f9ca108eeb3bc010e5",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.4.0"
-            },
-            "require-dev": {
-                "php": ">=8.1.0",
-                "phpunit/phpunit": "^9.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "EZMAIL\\": "EZMAIL/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jerry Urena",
-                    "email": "jerryurenaa@gmail.com",
-                    "homepage": "https://jerryurenaa.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Ivan Kara",
-                    "homepage": "https://github.com/realivanjx",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A lightweight package created with PHP using the official MIME documentation to send emails using the latest SMTP configuration",
-            "homepage": "https://nerdtrix.com",
-            "keywords": [
-                "EZMAIL",
-                "PHP SMTP",
-                "nerdtrix",
-                "php",
-                "smtp"
-            ],
-            "time": "2022-05-20T15:02:03+00:00"
-        },
-        {
             "name": "phpmailer/phpmailer",
             "version": "v6.6.0",
             "source": {

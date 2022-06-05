@@ -32,6 +32,7 @@ require_once "BaseShipTwigController.php";
         $query->execute();
 
         $context['ships'] = $query->fetchAll();
+        $context['message_search']="Корабли по заданным критериям не найдены";
         return $context;
     }
  }
